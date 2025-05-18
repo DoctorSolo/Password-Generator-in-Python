@@ -5,8 +5,8 @@ from string import punctuation
 
 class Password_Generator:
     def __init__(self, lenght:int, hasCharacter:bool=True):
-        self.lenght = lenght
-        self.hasCharacter = hasCharacter
+        self.lenght:int  = lenght
+        self.hasCharacter:bool = hasCharacter
     
     
     def Generator(self):
@@ -15,3 +15,4 @@ class Password_Generator:
             characters += punctuation
         
         return "".join(SystemRandom().choice(characters) for _ in range(self.lenght))
+    
