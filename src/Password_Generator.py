@@ -1,3 +1,5 @@
+# @Doctor Solo
+
 from random import SystemRandom
 from string import ascii_letters
 from string import digits
@@ -9,10 +11,13 @@ class Password_Generator:
         self.__hasCharacter:bool = hasCharacter
     
     
-    def Generator(self):
-        characters = ascii_letters + digits
+    def Generator(self) -> str:
+        __characters = ascii_letters + digits
         if self.__hasCharacter:
-            characters += punctuation
+            __characters += punctuation
         
-        return "".join(SystemRandom().choice(characters) for _ in range(self.__lenght))
+        return "".join(
+            SystemRandom()
+            .choice(__characters) for _ in range(self.__lenght)
+            )
     
